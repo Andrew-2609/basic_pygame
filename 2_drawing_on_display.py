@@ -16,3 +16,6 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+# End the game
+pygame.quit()
