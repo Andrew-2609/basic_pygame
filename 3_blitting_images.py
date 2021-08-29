@@ -22,7 +22,7 @@ pygame.draw.line(display_surface, (0, 0, 0), (dino_left_rect.width + 10, 0),
 pygame.draw.line(display_surface, (0, 0, 0), (0, dino_left_rect.height + 10),
                  (dino_left_rect.width + 10, dino_left_rect.height + 10), 3)
 
-# THe main game loop
+# The main game loop
 running = True
 while running:
     for event in pygame.event.get():
