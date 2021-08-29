@@ -16,6 +16,12 @@ dino_left_image = pygame.image.load("left_dino.png")
 dino_left_rect = dino_left_image.get_rect()
 dino_left_rect.topleft = (0, 0)
 
+# Drawing lines to put dino_left_image inside of a black square
+pygame.draw.line(display_surface, (0, 0, 0), (dino_left_rect.width + 10, 0),
+                 (dino_left_rect.width + 10, dino_left_rect.height + 10), 3)
+pygame.draw.line(display_surface, (0, 0, 0), (0, dino_left_rect.height + 10),
+                 (dino_left_rect.width + 10, dino_left_rect.height + 10), 3)
+
 # THe main game loop
 running = True
 while running:
