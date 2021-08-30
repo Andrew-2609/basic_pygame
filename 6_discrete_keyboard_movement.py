@@ -27,6 +27,20 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+        # Check for discrete movement
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                dino_rect.x -= VELOCITY
+            if event.key == pygame.K_RIGHT:
+                dino_rect.x += VELOCITY
+            if event.key == pygame.K_UP:
+                dino_rect.y -= VELOCITY
+            if event.key == pygame.K_DOWN:
+                dino_rect.y += VELOCITY
+
+    # Fill the display surface to cover old images
+    display_surface.fill((255, 255, 255))
+
     # Blit (copy) assets to the screen
     display_surface.blit(dino_image, dino_rect)
 
