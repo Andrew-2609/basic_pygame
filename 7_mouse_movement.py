@@ -23,6 +23,12 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+        # Move based on clicks
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_x = event.pos[0]
+            mouse_y = event.pos[1]
+            dino_rect.center = (mouse_x, mouse_y)
+
     # Clear the display
     display_surface.fill((255, 255, 255))
 
