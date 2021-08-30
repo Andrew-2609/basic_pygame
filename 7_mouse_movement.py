@@ -29,6 +29,9 @@ while running:
             mouse_y = event.pos[1]
             dino_rect.center = (mouse_x, mouse_y)
 
+        if event.type == pygame.MOUSEMOTION and event.buttons[0] == 1:
+            dino_rect.center = (event.pos[0], event.pos[1])
+
     # Clear the display
     display_surface.fill((255, 255, 255))
 
