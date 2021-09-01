@@ -25,6 +25,20 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    # Get a list of all keys currently being pressed down
+    keys = pygame.key.get_pressed()
+    print(keys)
+
+    # Move the dinosaur continuously
+    if keys[pygame.K_LEFT]:
+        dino_rect.x -= VELOCITY
+    if keys[pygame.K_RIGHT]:
+        dino_rect.x += VELOCITY
+    if keys[pygame.K_UP]:
+        dino_rect.y -= VELOCITY
+    if keys[pygame.K_DOWN]:
+        dino_rect.y += VELOCITY
+
     # Fill the display
     display_surface.fill((255, 255, 255))
 
