@@ -1,3 +1,5 @@
+from random import randrange
+
 import pygame
 
 # Initialize pygame
@@ -46,8 +48,17 @@ while running:
     if keys[pygame.K_DOWN] and dino_rect.bottom < WINDOW_HEIGHT:
         dino_rect.y += VELOCITY
 
+    # Check for collision between two rects
+    if dino_rect.colliderect(coin_rect):
+        coin_rect.left = randrange(WINDOW_WIDTH - 32)
+        coin_rect.top = randrange(WINDOW_HEIGHT - 32)
+
     # Fill the display surface
     display_surface.fill((255, 255, 255))
+
+    # Draw rectangles to represent the rect's of each object
+    pygame.draw.rect(display_surface, (255, 0, 0), dino_rect, 1)
+    pygame.draw.rect(display_surface, (255, 255, 0), coin_rect, 1)
 
     # Blit (copy) the assets into display
     display_surface.blit(dino_image, dino_rect)
