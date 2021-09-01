@@ -34,13 +34,13 @@ while running:
     print(keys)
 
     # Move the dinosaur continuously
-    if keys[pygame.K_LEFT]:
+    if keys[pygame.K_LEFT] and dino_rect.left > 0:
         dino_rect.x -= VELOCITY
-    if keys[pygame.K_RIGHT]:
+    if keys[pygame.K_RIGHT] and dino_rect.right < WINDOW_WIDTH:
         dino_rect.x += VELOCITY
-    if keys[pygame.K_UP]:
+    if keys[pygame.K_UP] and dino_rect.top > 0:
         dino_rect.y -= VELOCITY
-    if keys[pygame.K_DOWN]:
+    if keys[pygame.K_DOWN] and dino_rect.bottom < WINDOW_HEIGHT:
         dino_rect.y += VELOCITY
 
     # Fill the display
