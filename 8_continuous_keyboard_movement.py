@@ -9,6 +9,10 @@ WINDOW_HEIGHT = 400
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Continuous Keyboard Movement")
 
+# Set FPS and clock
+FPS = 60
+clock = pygame.time.Clock()
+
 # Set game values
 VELOCITY = 5
 
@@ -47,6 +51,9 @@ while running:
 
     # Update the display
     pygame.display.update()
+
+    # Tick the clock
+    clock.tick(FPS)
 
 # End the game
 pygame.quit()
